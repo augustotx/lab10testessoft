@@ -10,6 +10,8 @@ def contar_palavras(palavras):
         # verificar se tem pontuação e remover
         palavra_lower = ''.join(char for char in
                                 palavra_lower if char.isalnum())
+        if palavra_lower == "guardachuva":
+            palavra_lower = "guarda-chuva"
         if palavra_lower in contagem:
             contagem[palavra_lower] += 1
         else:
