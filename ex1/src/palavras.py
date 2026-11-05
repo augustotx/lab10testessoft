@@ -11,7 +11,7 @@ def contar_palavras(palavras):
         # no caso de hifen, deixar
         if not palavra_lower.isalnum() and '-' not in palavra_lower:
             palavra_lower = ''.join(filter(str.isalnum, palavra_lower))
-        if palavra_lower == "":
+        if len(palavra_lower) == 0:
             continue
         if palavra_lower in contagem:
             contagem[palavra_lower] += 1
