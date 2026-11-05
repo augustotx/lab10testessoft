@@ -31,3 +31,15 @@ def test_line_breaks():
 
 def test_hifen():
     assert contar_palavras("guarda-chuva") == {"guarda-chuva": 1}
+
+
+def test_mais_pontos():
+    assert contar_palavras(",dia: ;dia;")
+
+
+def test_ainda_mais_pontos():
+    assert contar_palavras(":dia: ?dia?") == {"dia": 2}
+
+
+def test_tres_espacos():
+    assert contar_palavras("bom   dia") == {"dia": 2}
