@@ -62,3 +62,18 @@ def test_cupom_20_abaixo_minimo():
     carrinho.adicionar(25000)
     carrinho.aplicar_cupom("VINTE")
     assert carrinho.total == 25000
+
+
+def test_cupom_20():
+    carrinho = Carrinho()
+    carrinho.adicionar(30000)
+    carrinho.aplicar_cupom("VINTE")
+    assert carrinho.total == 24000
+
+
+def test_segundo_cupom_substitui_primeiro():
+    carrinho = Carrinho()
+    carrinho.adicionar(30000)
+    carrinho.aplicar_cupom("DEZ")
+    carrinho.aplicar_cupom("VINTE")
+    assert carrinho.total == 24000
