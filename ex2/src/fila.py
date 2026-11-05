@@ -28,6 +28,8 @@ class Fila:
             senha = "N" + str(len(self.lista_normal) + 1)
             self.lista_normal.append(senha)
             return senha
+        else:
+            raise ValueError
 
     def chamar(self):
         raise IndexError
