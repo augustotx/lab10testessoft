@@ -7,8 +7,9 @@ def contar_palavras(palavras):
     contagem = {}
     for palavra in palavras.split():
         palavra_lower = palavra.lower()
-        if palavra_lower == "fim." or palavra_lower == "fim!":
-            palavra_lower = "fim"
+        # verificar se tem pontuação e remover
+        palavra_lower = ''.join(char for char in
+                                palavra_lower if char.isalnum())
         if palavra_lower in contagem:
             contagem[palavra_lower] += 1
         else:
