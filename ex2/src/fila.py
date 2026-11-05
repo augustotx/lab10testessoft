@@ -15,7 +15,17 @@
 
 class Fila:
     def __init__(self):
+        self.lista_prioritaria = []
         return
+
+    def emitir(self, tipo):
+        if tipo == "prioritaria":
+            self.lista_prioritaria.append("P1")
+            return "P1"
 
     def chamar(self):
         raise IndexError
+
+    @property
+    def aguardando(self):
+        return len(self.lista_prioritaria)
