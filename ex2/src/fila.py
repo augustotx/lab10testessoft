@@ -20,8 +20,9 @@ class Fila:
 
     def emitir(self, tipo):
         if tipo == "prioritaria":
-            self.lista_prioritaria.append("P1")
-            return "P1"
+            senha = "P" + str(len(self.lista_prioritaria) + 1)
+            self.lista_prioritaria.append(senha)
+            return senha
 
     def chamar(self):
         raise IndexError
