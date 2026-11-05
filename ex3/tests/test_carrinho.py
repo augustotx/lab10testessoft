@@ -77,3 +77,9 @@ def test_segundo_cupom_substitui_primeiro():
     carrinho.aplicar_cupom("DEZ")
     carrinho.aplicar_cupom("VINTE")
     assert carrinho.total == 24000
+
+
+def test_quantidade():
+    carrinho = Carrinho()
+    with pytest.raises(ValueError):
+        carrinho.adicionar(10, 0)
