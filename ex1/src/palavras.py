@@ -7,8 +7,8 @@ def contar_palavras(palavras):
     contagem = {}
     for palavra in palavras.split():
         palavra_lower = palavra.lower()
-        if (palavra_lower == "dia"):
-            contagem["dia"] = contagem.get("dia", 0) + 1
+        if palavra_lower in contagem:
+            contagem[palavra_lower] += 1
         else:
-            contagem["teste"] = contagem.get("teste", 0) + 1
+            contagem[palavra_lower] = 1
     return contagem
