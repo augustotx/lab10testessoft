@@ -7,7 +7,7 @@ class Carrinho:
         self._desconto = 0
 
     def adicionar(self, preco, quantidade=1):
-        if preco < 0:
+        if preco <= 0:
             raise ValueError("preco deve ser positivo")
         self._subtotal += preco * quantidade
 
