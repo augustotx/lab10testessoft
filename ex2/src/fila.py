@@ -32,6 +32,8 @@ class Fila:
             raise ValueError
 
     def chamar(self):
+        if self.lista_prioritaria:
+            return self.lista_prioritaria.pop(0)
         raise IndexError
 
     @property
