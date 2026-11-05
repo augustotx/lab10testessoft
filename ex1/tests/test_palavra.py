@@ -7,3 +7,7 @@ def test_vazio():
 
 def test_teste():
     assert contar_palavras("teste") == {"teste": 1}
+
+
+def test_cases():
+    assert contar_palavras("Dia dia DIA") == {"dia": 3}
