@@ -34,6 +34,8 @@ class Fila:
     def chamar(self):
         if self.lista_prioritaria:
             return self.lista_prioritaria.pop(0)
+        elif self.lista_normal:
+            return self.lista_normal.pop(0)
         raise IndexError
 
     @property
