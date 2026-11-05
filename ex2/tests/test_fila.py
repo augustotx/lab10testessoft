@@ -12,14 +12,14 @@ def test_emitir_prioritaria():
     f = Fila()
     senha = f.emitir("prioritaria")
     assert senha == "P1"
-    assert f.aguardando() == 1
+    assert f.aguardando == 1
 
 
 def test_emitir_normal():
     f = Fila()
     senha = f.emitir("normal")
     assert senha == "N1"
-    assert f.aguardando() == 1
+    assert f.aguardando == 1
 
 
 def test_emitir_invalid():
@@ -33,7 +33,7 @@ def test_chamar_prioritaria():
     f.emitir("prioritaria")
     senha = f.chamar()
     assert senha == "P1"
-    assert f.aguardando() == 0
+    assert f.aguardando == 0
 
 
 def test_chamar_normal():
@@ -41,7 +41,7 @@ def test_chamar_normal():
     f.emitir("normal")
     senha = f.chamar()
     assert senha == "N1"
-    assert f.aguardando() == 0
+    assert f.aguardando == 0
 
 
 def test_prioritaria_antes_normal():
@@ -50,7 +50,7 @@ def test_prioritaria_antes_normal():
     f.emitir("prioritaria")
     senha = f.chamar()
     assert senha == "P1"
-    assert f.aguardando() == 1
+    assert f.aguardando == 1
 
 
 def test_prioritaria_2_seguidas():
@@ -64,4 +64,4 @@ def test_prioritaria_2_seguidas():
     assert senha1 == "P1"
     assert senha2 == "P2"
     assert senha3 == "N1"
-    assert f.aguardando() == 0
+    assert f.aguardando == 0
