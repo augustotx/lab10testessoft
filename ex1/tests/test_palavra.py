@@ -15,3 +15,19 @@ def test_cases():
 
 def test_pontos():
     assert contar_palavras("fim. Fim!") == {"fim": 2}
+
+
+def test_duas_palavras():
+    assert contar_palavras("dia a dia") == {"dia": 2, "a": 1}
+
+
+def test_bom_dia():
+    assert contar_palavras("bom dia") == {"bom": 1, "dia": 1}
+
+
+def test_line_breaks():
+    assert contar_palavras("bom\ndia") == {"bom": 1, "dia": 1}
+
+
+def test_hifen():
+    assert contar_palavras("guarda-chuva") == {"guarda-chuva": 1}
