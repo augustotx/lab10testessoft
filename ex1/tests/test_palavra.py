@@ -42,4 +42,4 @@ def test_ainda_mais_pontos():
 
 
 def test_tres_espacos():
-    assert contar_palavras("bom   dia") == {"dia": 2}
+    assert contar_palavras("bom   dia") == {"bom": 1, "dia": 1}
