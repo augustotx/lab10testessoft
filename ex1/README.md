@@ -1,31 +1,41 @@
-Lista de testes, fora de ordem
-"Dia dia DIA" dá {"dia": 3} "" dá {}
-"fim. Fim!" dá {"fim": 2} "teste" dá {"teste": 1}
-Três espaços entre bom e dia dão dois
-itens
-"guarda-chuva" dá um item
-"dia a dia" dá dia 2 e a 1 "... !" dá {}
-"bom\ndia" dá dois itens "bom dia" dá dois itens
-",dia, ;dia;" dá {"dia": 2} ":dia: ?dia?" dá {"dia": 2}
-CC8550 • Simulação e Teste de Software 8 / 20
-Contador de Palavras
-x Exercício 1
-Use a especificação e a lista de testes apresentadas.
-a) Ordene a lista do teste mais simples ao mais exigente. Justifique as
-duas primeiras posições.
-
-a) testes do mais simples ao mais difícil:
-
 1. "" dá {} - Este é o teste mais simples, pois não contém nenhuma palavra, resultando em um dicionário vazio.
 2. "teste" dá {"teste": 1} - Este teste é simples, pois contém apenas uma palavra, permitindo verificar se o contador de palavras funciona corretamente para casos básicos.
-3. "Dia dia DIA" dá {"dia": 3} - Este teste verifica a contagem de palavras repetidas e a sensibilidade a maiúsculas e minúsculas.
-4. "fim. Fim!" dá {"fim": 2} - Este teste avalia a contagem de palavras com pontuação, garantindo que a pontuação não afete a contagem correta.
-5. "dia a dia" dá {"dia": 2} - Este teste verifica a contagem de palavras repetidas em uma frase com palavras separadas por espaços.
-6. "bom dia" dá dois itens - Este teste avalia a contagem de palavras em uma frase simples, garantindo que o espaço entre as palavras seja tratado corretamente.
-7. "bom\ndia" dá dois itens - Este teste verifica a contagem de palavras em uma frase com uma quebra de linha, garantindo que a quebra de linha seja tratada como um espaço.
-8. "guarda-chuva" dá um item - Este teste avalia a contagem de palavras compostas, garantindo que palavras com hífens sejam contadas corretamente.
-9. ",dia, ;dia;" dá {"dia": 2} - Este teste verifica a contagem de palavras com pontuação ao redor, garantindo que a pontuação não afete a contagem correta.
-10. ":dia: ?dia?" dá {"dia": 2} - Este teste avalia a contagem de palavras com pontuação ao redor, garantindo que a pontuação não afete a contagem correta.
-11. Três espaços entre bom e dia dão dois itens - Este teste verifica a contagem de palavras em uma frase com múltiplos espaços, garantindo que os espaços extras não afetem a contagem correta
+3. "Dia dia DIA" dá {"dia": 3}
+4. "fim. Fim!" dá {"fim": 2}
+5. "dia a dia" dá {"dia": 2}
+6. "bom dia" dá dois itens
+7. "bom\ndia" dá dois itens
+8. "guarda-chuva" dá um item
+9. ",dia, ;dia;" dá {"dia": 2}
+10. ":dia: ?dia?" dá {"dia": 2}
+11. Três espaços entre bom e dia dão dois itens
 
 b) verificar commits desse repositório
+
+c) nenhum GREEN veio sem RED antes
+```
+⟩ git log --oneline
+50ceed3 (HEAD -> main) ex1 REFACTOR tres espacos
+d9c64bd ex1 GREEN tres espacos
+effeb90 erro de digitacao
+bfed6ed ex1 RED tres espacos
+932e9e7 ex1 REFACTOR hifen
+3126e89 ex1 GREEN hifen
+3472fde ex1 RED hifen
+c758d8d ex1 REFACTOR pontos
+342ca23 ex1 GREEN pontos
+e17ce7f ex1 RED pontos
+e97fc92 ex1 REFACTOR cases
+88e4b12 ex1 GREEN cases
+d0c130c ex1 RED cases
+c4d2313 ex1 GREEN
+1569019 ex1 RED
+da6a050 gitignores
+5b56a24 pyproject.toml
+6a0618b add mutants
+b32c2d7 (origin/main, origin/HEAD) Initial commit
+```
+
+d) a maior parte dos testes passaram na primeira execução (5, 6, 7, 9, 10). O código já estava correto para esses casos, mas falhou em outros.
+
+e) 23 mutantes gerados, 22 mortos, 1 ignorado.
