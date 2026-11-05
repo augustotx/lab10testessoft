@@ -11,3 +11,7 @@ def test_teste():
 
 def test_cases():
     assert contar_palavras("Dia dia DIA") == {"dia": 3}
+
+
+def test_pontos():
+    assert contar_palavras("fim. Fim!") == {"fim": 2}
