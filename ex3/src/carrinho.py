@@ -18,9 +18,9 @@ class Carrinho:
 
     @property
     def total(self):
-        if self._desconto == 10 and self._subtotal >= 10000:
+        desc10 = (self._desconto == 10 and self._subtotal >= 10000)
+        desc20 = (self._desconto == 20 and self._subtotal >= 30000)
+        if desc10 or desc20:
             return self._subtotal * (100 - self._desconto) // 100
-        elif self._subtotal == 25000:
-            return 25000
         else:
             return self._subtotal
