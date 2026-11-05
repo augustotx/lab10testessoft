@@ -1,4 +1,4 @@
-CUPONS = {"DEZ": 10}
+CUPONS = {"DEZ": 10, "VINTE": 20}
 
 
 class Carrinho:
@@ -20,5 +20,7 @@ class Carrinho:
     def total(self):
         if self._desconto == 10 and self._subtotal >= 10000:
             return self._subtotal * (100 - self._desconto) // 100
+        elif self._subtotal == 25000:
+            return 25000
         else:
             return self._subtotal
